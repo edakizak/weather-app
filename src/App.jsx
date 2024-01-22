@@ -5,6 +5,7 @@ import "./App.css";
 import Form from "./components/form/Form.jsx";
 import { uid } from "uid";
 import useLocalStorageState from "use-local-storage-state";
+import List from "./components/list/List.jsx";
 
 function App() {
   const [activities, setActivities] = useLocalStorageState("activities", {
@@ -20,6 +21,13 @@ function App() {
   return (
     <>
       <Form onAddActivity={handleAddActivity} />
+      {/* <List
+        isGoodWeather={isGoodWeather}
+        activities={
+          isGoodWeather ? goodWeatherActivities : badWeatherActivities
+        }
+        onDeleteActivity={handleDeleteActivity}
+      /> */}
     </>
   );
 }
