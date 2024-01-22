@@ -10,6 +10,7 @@ export default function Form({ onAddActivity }) {
     onAddActivity({ name: activity, isGoodWeather });
     setActivity("");
     setIsGoodWeather(false);
+    // console.log(setIsGoodWeather);
   };
   return (
     <form className="form" onSubmit={handleSubmit}>
