@@ -39,6 +39,7 @@
 .delete-button:hover {
   /* background-color: rgba(253, 162, 162, 0.352); */
   transform: scale(1.5, 1.5);
+  border-color: none;
 }
 
 .list_item {
