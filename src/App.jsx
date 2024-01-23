@@ -1,6 +1,4 @@
-import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
+// import React from "react";
 import "./App.css";
 import Form from "./components/form/Form.jsx";
 import { uid } from "uid";
@@ -11,23 +9,25 @@ function App() {
   const [activities, setActivities] = useLocalStorageState("activities", {
     defaultValue: [],
   });
-  function handleAddActivity(newActivities) {
-    setActivities([{ id: uid(), ...newActivities }, ...activities]);
+  function handleAddActivity(newActivity) {
+    setActivities([{ id: uid(), ...newActivity }, ...activities]);
     // create a state for activities,
     // write a function handleAddActivity which accepts a new activity object as parameter and
     // adds this object to the activities state
     // please add a unique id to every new activity object; you can use uid to do so.
   }
+
+  function handleDeleteActivity(activityId) {
+    if (activityId !== null) {
+      setActivities(
+        activities.filter((activity) => activity.id !== activityId)
+      );
+    }
+  }
   return (
     <>
       <Form onAddActivity={handleAddActivity} />
-      {/* <List
-        isGoodWeather={isGoodWeather}
-        activities={
-          isGoodWeather ? goodWeatherActivities : badWeatherActivities
-        }
-        onDeleteActivity={handleDeleteActivity}
-      /> */}
+      <List activities={activities} deleteActivity={handleDeleteActivity} />
     </>
   );
 }
