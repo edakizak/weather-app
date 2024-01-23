@@ -8,13 +8,12 @@
   margin: 40px auto;
   color: #fff; White text color */
 
-/* From https://css.glass */
-background: rgba(235, 18, 78, 0.05);
+background: rgba(86, 100, 124, 0);
 border-radius: 16px;
 box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-backdrop-filter: blur(7.7px);
--webkit-backdrop-filter: blur(7.7px);
-border: 1px solid rgba(235, 18, 78, 0.18);
+backdrop-filter: blur(16.8px);
+-webkit-backdrop-filter: blur(16.8px);
+border: 1px solid rgba(86, 100, 124, 0.5);
 }
 
 /* Style for form headings */
@@ -55,22 +54,36 @@ border: 1px solid rgba(235, 18, 78, 0.18);
 /* Submit Button Styling */
 .form button[type="submit"] {
   display: block;
-  width: 100%;
-  padding: 10px;
-  border-radius: 5px;
-  background-color: #556cd6; /* Subtle blue background for the button */
-  color: #fff;
+  display: inline-block;
+  /* align-items: center;
+  justify-content: center;  */
+  gap: 10px;
+  width: 100px;
+  padding: 10px; 
+  border-radius: 60px;
+  background-color: #d5f009; 
+  color: #000000;
   border: none;
+  letter-spacing: 0.4px;
   cursor: pointer;
-  transition: background-color 0.3s ease; /* Transition for a smooth color change */
+  transition: background-color 0.3s ease; 
+  
 }
 
 .form button[type="submit"]:hover {
-  background-color: #ffee00; /* Lighter blue on hover */
-  color: #2c2c2c;
+  background-color: inherit; 
+  color:#d5f009;
+
 }
 
 /* Placeholder styling */
 ::placeholder {
-  color: #b0b0b0; /* Light grey color for placeholder */
+  color: #c7c7c7; 
+}
+.inputGoodWeather {
+font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.checkbox:checked {
+  background-color: #d5f009;
 }

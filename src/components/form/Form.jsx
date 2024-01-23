@@ -43,7 +43,7 @@ export default function Form({ onAddActivity }) {
           Good Weather Activity:
         </label>
         <input
-          className="checkbox"
+          className="checkbox "
           type="checkbox"
           id="inputGoodWeather"
           name="inputGoodWeather"
@@ -51,7 +51,7 @@ export default function Form({ onAddActivity }) {
           // onChange event is executed every time the checkbox is clicked. e.target refers to the DOM element that triggered the checkbox input.
           onChange={(e) => setIsGoodWeather(e.target.checked)}
         ></input>
-        <button type="submit">Add Activity</button>
+        <button type="submit">Submit</button>
       </form>
     </>
   );

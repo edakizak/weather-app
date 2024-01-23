@@ -1,12 +1,38 @@
 .activity-list {
-  list-style: none; /* Remove default list styling */
-  padding: 0; /* Remove default padding */
+  list-style: none;
+  padding: 0;
+  display: block;
+  /* display: flex;
+  justify-content: center; */
 }
 
 .activity-list li {
-  background-color: #46cc0384; /* Light background for list items */
-  margin: 10px 0; /* Add some space between list items */
-  padding: 10px; /* Add some padding inside list items */
-  border-radius: 5px; /* Slightly rounded corners for list items */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for list items */
+  background-color: inherit;
+  margin: 10px 0;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  letter-spacing: 0.4px;
+}
+.activity-list li:hover {
+  text-decoration: underline;
+}
+
+.delete-button {
+  background-color: inherit;
+  top: 3px;
+  align-self: center;
+  border-style: inherit;
+}
+.delete-button:hover {
+  color: #d5f009;
+  border-radius: 60px;
+  background-color: rgb(2, 34, 62);
+  border-radius: 200px;
+}
+
+.list_item {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-style: italic;
 }
