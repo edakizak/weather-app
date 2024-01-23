@@ -5,13 +5,15 @@ import { uid } from "uid";
 import useLocalStorageState from "use-local-storage-state";
 import List from "./components/list/List.jsx";
 import { useEffect, useState } from "react";
+import Weather from "./components/weather/Weather.jsx";
 
 function App() {
   const [activities, setActivities] = useLocalStorageState("activities", {
     defaultValue: [],
   });
-  const [weather, setWeather] = useState(null);
-  const isGoodWeather = true; // In the App.js, add a variable const isGoodWeather = true.
+  const [weather, setWeather] = useState("");
+  // const isGoodWeather = true; // In the App.js, add a variable const isGoodWeather = true.
+  const [isGoodWeather, setIsGoodWeather] = useState({});
   const filteredActivities = activities.filter(
     (activity) => activity.isGoodWeather === isGoodWeather
   ); //Filter the activities for those whose key isForGoodWeather is equal to the global isGoodWeather variable.
@@ -23,15 +25,15 @@ function App() {
         const response = await fetch(weatherUrl);
         if (response.ok) {
           const weatherData = await response.json();
-
-          setWeatherData(weatherData);
+          setWeather(weatherData);
         } else {
-          console.error("");
+          console.error("Failed to fetch weather data.");
         }
       } catch (error) {
-        console.error("Error!");
+        console.error("Error while fetching weather data:", error);
       }
     }
+    fetchWeatherData();
 
     const intervalID = setInterval(fetchWeatherData, 5000);
     return () => {
@@ -56,8 +58,13 @@ function App() {
   }
   return (
     <>
+      <Weather weather={weather} />
+      <List
+        activities={filteredActivities}
+        deleteActivity={handleDeleteActivity}
+        isGoodWeather={weather}
+      />
       <Form onAddActivity={handleAddActivity} />
-      <List activities={activities} deleteActivity={handleDeleteActivity} />
     </>
   );
 }

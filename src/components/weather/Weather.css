@@ -1,0 +1,21 @@
+.weather-details {
+  margin-top: 20px;
+}
+
+.weather-details div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.weather-details h1 {
+  font-size: 48px;
+  margin-right: 10px;
+}
+
+.weather-details h2 {
+  font-size: 20px;
+  color: #333;
+  margin-top: 10px;
+}
