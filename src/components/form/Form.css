@@ -1,9 +1,8 @@
 /* General form styling */
 .form {
-  /* background-color: #2c2c2c; /* Dark background for the form */
   padding: 20px;
-  /* border-radius: 10px; */
-  /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); */
+
+  width: auto;
   max-width: 400px;
   margin: 40px auto;
   color: #fff;
@@ -27,28 +26,51 @@
   display: block;
   margin-bottom: 5px;
   font-size: 1rem;
+  font-size: medium;
 }
 
 .form input[type="text"],
 .form input[type="checkbox"] {
-  width: 100%; /* Full width */
+  width: 100%;
   padding: 10px;
-  margin-bottom: 20px; /* Space between form elements */
-  border-radius: 5px; /* Rounded corners for inputs */
-  border: none; /* No border */
+  margin-bottom: 20px;
+  border-radius: 5px;
+  border: none;
   box-sizing: border-box; /* Include padding and border in the element's total width and height */
 }
 
 /* Text input specific styling */
 .form input[type="text"] {
-  background-color: #000000; /* Darker background for text input */
-  color: #fff; /* White text color */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-family: inherit;
+  font-size: 11px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+  color: #3b75c1;
+  background-color: #e0e8ef;
+  border-style: solid;
+  border-width: 2px 2px 2px 2px;
+  border-color: rgba(255, 255, 255, 0.333);
+  border-radius: 40px 40px 40px 40px;
+  padding: 16px 24px 16px 28px;
+  transform: translate(0px, 0px) rotate(0deg);
+  transition: 0.2s;
+  box-shadow: -1px -1px 2px 0px #ffffff, 1px 1px 2px 0px;
+  /* background-color: #000000;
+  color: #fff;
+  border-radius: 100px;
+  text-align: center;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; */
 }
 
 /* Checkbox specific styling */
 .form input[type="checkbox"] {
-  transform: scale(1.2); /* Slightly larger checkbox */
-  cursor: pointer; /* Pointer cursor on hover */
+  transform: scale(1.2);
+  cursor: pointer;
 }
 
 /* Submit Button Styling */
@@ -79,7 +101,9 @@
   color: #c7c7c7;
 }
 .inputGoodWeather {
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-family: inherit;
+
+  letter-spacing: 0.4px;
 }
 
 .checkbox:checked {
