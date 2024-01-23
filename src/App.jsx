@@ -32,6 +32,24 @@ function App() {
         if (response.ok) {
           const weatherData = await response.json();
           setWeather(weatherData);
+
+          const body = document.body;
+          if (selectedLocation === "") {
+            body.style.background =
+              "linear-gradient(180deg,rgba(0, 212, 255, 1) 0%, rgba(1, 99, 138, 1) 29%, rgba(2, 28, 64, 1) 57%, rgba(2, 0, 36, 1) 100%);";
+          } else if (selectedLocation === "europe") {
+            body.style.background =
+              "linear-gradient(180deg, rgba(176, 166, 53, 1) 0%, rgba(2, 0, 36, 1) 100%)";
+          } else if (selectedLocation === "arctic") {
+            body.style.background =
+              "linear-gradient(180deg, rgba(40, 114, 209, 1) 0%, rgba(20, 18, 56, 1) 100%)";
+          } else if (selectedLocation === "sahara") {
+            body.style.background =
+              "linear-gradient(180deg, rgba(209, 134, 40, 1) 0%, rgba(2, 0, 36, 1) 100%)";
+          } else if (selectedLocation === "rainforest") {
+            body.style.background =
+              "linear-gradient(180deg, rgba(36, 71, 14, 1) 0%, rgba(2, 0, 36, 1) 100%)";
+          }
         } else {
           console.error("Failed to fetch weather data.");
         }
