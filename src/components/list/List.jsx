@@ -13,7 +13,7 @@ export default function List({ activities, deleteActivity, isGoodWeather }) {
             className="delete-button"
             onClick={() => deleteActivity(activity.id)}
           >
-            x
+           <span className="emoji">🗑</span>
           </button>
         </li>
       ))}

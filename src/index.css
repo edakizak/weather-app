@@ -19,10 +19,6 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-.background-change {
-  background-color: red !important;
-}
-
 a {
   font-weight: 500;
   color: #646cff;
