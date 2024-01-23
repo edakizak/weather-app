@@ -3,10 +3,12 @@
   align-items: center;
   justify-content: center;
   gap: 10px;
-  font-family: inherit;
-  font-size: 11px;
-  font-weight: 500;
-  text-transform: uppercase;
+  width: auto;
+  padding: 10px;
+  border-radius: 60px;
+  /* background-color: #d5f009; */
+  color: #000000;
+  border: none;
   letter-spacing: 0.4px;
   color: #3b75c1;
   background-color: #e0e8ef;

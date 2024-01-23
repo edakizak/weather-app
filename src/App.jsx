@@ -60,19 +60,21 @@ function App() {
 
   return (
     <>
-      <Locations
-        selectedLocation={selectedLocation}
-        setSelectedLocation={setSelectedLocation}
-      />
-      <Weather weather={weather} />
-      <List
-        isGoodWeather={isGoodWeather}
-        activities={
-          isGoodWeather ? goodWeatherActivities : badWeatherActivities
-        }
-        onDeleteActivity={handleDeleteActivity}
-      />
-      <Form onAddActivity={handleAddActivity} />
+      <div className={`location-selection ${selectedLocation}`}>
+        <Locations
+          selectedLocation={selectedLocation}
+          setSelectedLocation={setSelectedLocation}
+        />
+        <Weather weather={weather} />
+        <List
+          isGoodWeather={isGoodWeather}
+          activities={
+            isGoodWeather ? goodWeatherActivities : badWeatherActivities
+          }
+          onDeleteActivity={handleDeleteActivity}
+        />
+        <Form onAddActivity={handleAddActivity} />
+      </div>
     </>
   );
 }
