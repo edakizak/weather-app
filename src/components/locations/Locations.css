@@ -1,0 +1,16 @@
+.location-selection {
+  display: block;
+  display: inline-block;
+  /* align-items: center;
+  justify-content: center;  */
+  gap: 10px;
+  width: 180px;
+  padding: 10px;
+  border-radius: 60px;
+  background-color: #d5f009;
+  color: #000000;
+  border: none;
+  letter-spacing: 0.4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}

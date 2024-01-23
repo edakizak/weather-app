@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 // Import statements:
 import "./Form.css";
 import { useState } from "react";
@@ -18,10 +19,11 @@ export default function Form({ onAddActivity }) {
     const newActivity = { id: Date.now(), name: activity, isGoodWeather };
     onAddActivity(newActivity);
     setActivities([...activities, newActivity]);
-    setActivity("");
+    // setActivity("");
     setIsGoodWeather(false);
     // console.log(setIsGoodWeather);
   };
+  console.log("Form", activities);
   return (
     <>
       {/* <List activities={activities} /> */}
