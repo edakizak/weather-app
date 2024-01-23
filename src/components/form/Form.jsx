@@ -4,24 +4,34 @@ import { useState } from "react";
 import useLocalStorageState from "use-local-storage-state";
 
 // Component declaration:
-export default function Form({ onAddActivity }) {
-  // State initialization:
+// export default function Form({ onAddActivity }) {
+// State initialization:
+// const [activity, setActivity] = useState("");
+// const [isGoodWeather, setIsGoodWeather] = useState(false);
+// const [activities, setActivities] = useLocalStorageState("activities", {
+//   defaultValue: [],
+// });
+
+export const Form = ({ onAddActivity }) => {
   const [activity, setActivity] = useState("");
   const [isGoodWeather, setIsGoodWeather] = useState(false);
   const [activities, setActivities] = useLocalStorageState("activities", {
     defaultValue: [],
   });
 
-  // handleSubmit is a function that's called when the form is submitted.
   const handleSubmit = (event) => {
     event.preventDefault();
-    const newActivity = { id: Date.now(), name: activity, isGoodWeather };
-    onAddActivity(newActivity);
-    setActivities([...activities, newActivity]);
-    setActivity("");
-    setIsGoodWeather(false);
-    // console.log(setIsGoodWeather);
+
+    const formData = new FormData(event.target);
+    const data = Object.fromEntries(formData);
+    data.inputGoodWeather = event.target.inputGoodWeather.checked === true;
+    onAddActivity(data);
+    console.log("form", formData);
+    console.log("data", data);
+    event.target.reset();
+    event.target.inputName.focus();
   };
+
   return (
     <>
       {/* <List activities={activities} /> */}
@@ -55,4 +65,4 @@ export default function Form({ onAddActivity }) {
       </form>
     </>
   );
-}
+};
