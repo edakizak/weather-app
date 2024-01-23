@@ -1,6 +1,6 @@
 // Import statements:
 import "./Form.css";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 // Component declaration:
 export default function Form({ onAddActivity }) {
@@ -16,6 +16,19 @@ export default function Form({ onAddActivity }) {
     setIsGoodWeather(false);
     // console.log(setIsGoodWeather);
   };
+  // Load activities from local storage on component mount
+  useEffect(() => {
+    const storedActivities = localStorage.getItem("activities");
+    if (storedActivities) {
+      const parsedActivities = JSON.parse(storedActivities);
+      setActivities(parsedActivities);
+    }
+  }, []);
+
+  // Save activities to local storage whenever the activities state changes
+  useEffect(() => {
+    localStorage.setItem("activities", JSON.stringify(activities));
+  }, [activities]);
   return (
     <form className="form" onSubmit={handleSubmit}>
       <h4>Add New Activity:</h4>
@@ -40,7 +53,6 @@ export default function Form({ onAddActivity }) {
         id="inputGoodWeather"
         name="inputGoodWeather"
         checked={isGoodWeather}
-        // onChange event is executed every time the checkbox is clicked. e.target refers to the DOM element that triggered the checkbox input.
         onChange={(e) => setIsGoodWeather(e.target.checked)}
       ></input>
       <button type="submit">Add Activity</button>
