@@ -1,4 +1,16 @@
 import "./List.css";
-export default function List() {
-  return <ul className="list">{activities.map(activity)}</ul>;
+import React from "react";
+import useLocalStorageState from "react";
+export default function List(activities, isGoodWeather) {
+  return (
+    <ul className="activity-list">
+      {activities.map((activity) => (
+        <li className="list_item" key={activity.id}>
+          {" "}
+          {activity.name} - {activity.isGoodWeather ? "Good" : "Bad"} Weather
+          Activity
+        </li>
+      ))}
+    </ul>
+  );
 }
