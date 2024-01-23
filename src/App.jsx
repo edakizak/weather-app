@@ -1,3 +1,4 @@
+// eslint-disable-next-line no-unused-vars
 import React, { useState, useEffect } from "react";
 import "./App.css";
 import { uid } from "uid";
@@ -8,15 +9,20 @@ import Weather from "./components/weather/Weather.jsx";
 import Locations from "./components/locations/Locations.jsx";
 
 function App() {
-  const [activities, setActivities] = useLocalStorageState("activities", []);
+  const [activities, setActivities] = useLocalStorageState("activities", {
+    defaultValue: [],
+  });
   const [weather, setWeather] = useState("");
-  const [isGoodWeather, setIsGoodWeather] = useState(true);
   const [selectedLocation, setSelectedLocation] = useState("");
 
-  const filteredActivities = activities.filter(
-    (activity) => activity.isGoodWeather === isGoodWeather
-  );
+  const isGoodWeather = weather?.isGoodWeather;
 
+  const goodWeatherActivities = activities.filter(
+    (activity) => activity.isGoodWeather === true
+  );
+  const badWeatherActivities = activities.filter(
+    (activity) => activity.isGoodWeather === false
+  );
   const weatherUrl = `https://example-apis.vercel.app/api/weather/${selectedLocation}`;
 
   useEffect(() => {
@@ -42,12 +48,15 @@ function App() {
   }, [weatherUrl]);
 
   function handleAddActivity(newActivity) {
+    console.log("New activity:", newActivity);
     setActivities([{ id: uid(), ...newActivity }, ...activities]);
   }
 
   function handleDeleteActivity(activityId) {
     setActivities(activities.filter((activity) => activity.id !== activityId));
   }
+  console.log("App", activities);
+  console.log("good", goodWeatherActivities);
 
   return (
     <>
@@ -57,9 +66,11 @@ function App() {
       />
       <Weather weather={weather} />
       <List
-        activities={filteredActivities}
-        deleteActivity={handleDeleteActivity}
         isGoodWeather={isGoodWeather}
+        activities={
+          isGoodWeather ? goodWeatherActivities : badWeatherActivities
+        }
+        onDeleteActivity={handleDeleteActivity}
       />
       <Form onAddActivity={handleAddActivity} />
     </>

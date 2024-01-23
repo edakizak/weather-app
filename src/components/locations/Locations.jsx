@@ -17,8 +17,12 @@ export default function Locations({ selectedLocation, setSelectedLocation }) {
   };
 
   return (
-    <select value={selectedLocation} onChange={handleLocationChange}>
-      <option value="">Select a location</option>
+    <select
+      className="location-selection"
+      value={selectedLocation}
+      onChange={handleLocationChange}
+    >
+      <option value="">Select a location 📍</option>
       {locationOptions.map((option) => (
         <option key={option.value} value={option.value}>
           {option.label}
