@@ -6,6 +6,7 @@ import useLocalStorageState from "use-local-storage-state";
 import List from "./components/list/List.jsx";
 import { useEffect, useState } from "react";
 import Weather from "./components/weather/Weather.jsx";
+import Locations from "./components/locations/Locations.jsx";
 
 function App() {
   const [activities, setActivities] = useLocalStorageState("activities", {
@@ -18,7 +19,8 @@ function App() {
     (activity) => activity.isGoodWeather === isGoodWeather
   ); //Filter the activities for those whose key isForGoodWeather is equal to the global isGoodWeather variable.
 
-  const weatherUrl = `https://example-apis.vercel.app/api/weather`;
+  const weatherUrl = `https://example-apis.vercel.app/api/weather${selectedLocation}`;
+
   useEffect(() => {
     async function fetchWeatherData() {
       try {
@@ -58,6 +60,7 @@ function App() {
   }
   return (
     <>
+      <Locations />
       <Weather weather={weather} />
       <List
         activities={filteredActivities}
