@@ -5,7 +5,7 @@
 
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
-  background: rgb(0, 212, 255);
+  background: rgba(0, 212, 255, 1);
   background: linear-gradient(
     180deg,
     rgba(0, 212, 255, 1) 0%,
@@ -19,6 +19,7 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
 a {
   font-weight: 500;
   color: #646cff;
@@ -71,4 +72,72 @@ button:focus-visible {
   button {
     background-color: #f9f9f9;
   }
+}
+
+/* .app-container.europe {
+  --background: rgb(176, 166, 53);
+  --background: linear-gradient(
+    180deg,
+    rgba(176, 166, 53, 1) 0%,
+    rgba(2, 0, 36, 1) 100%
+  );
+}
+
+.app-container.arctic {
+  background: rgb(40, 114, 209);
+  background: linear-gradient(
+    180deg,
+    rgba(40, 114, 209, 1) 0%,
+    rgba(20, 18, 56, 1) 100%
+  );
+}
+
+.app-container.sahara {
+  background: rgb(209, 134, 40);
+  background: linear-gradient(
+    180deg,
+    rgba(209, 134, 40, 1) 0%,
+    rgba(2, 0, 36, 1) 100%
+  );
+}
+
+.app-container.rainforest {
+  background: rgb(36, 71, 14);
+  background: linear-gradient(
+    180deg,
+    rgba(36, 71, 14, 1) 0%,
+    rgba(2, 0, 36, 1) 100%
+  );
+} */
+:root.europe {
+  background: linear-gradient(
+    180deg,
+    rgba(176, 166, 53, 1) 0%,
+    rgba(2, 0, 36, 1) 100%
+  );
+}
+
+:root.arctic {
+  background: rgb(40, 114, 209);
+  background: linear-gradient(
+    180deg,
+    rgba(40, 114, 209, 1) 0%,
+    rgba(20, 18, 56, 1) 100%
+  );
+}
+
+:root.sahara {
+  background: linear-gradient(
+    180deg,
+    rgba(209, 134, 40, 1) 0%,
+    rgba(2, 0, 36, 1) 100%
+  );
+}
+
+:root.rainforest {
+  background: linear-gradient(
+    180deg,
+    rgba(36, 71, 14, 1) 0%,
+    rgba(2, 0, 36, 1) 100%
+  );
 }
