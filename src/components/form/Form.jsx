@@ -27,9 +27,7 @@ export default function Form({ onAddActivity }) {
       {/* <List activities={activities} /> */}
       <form className="form" onSubmit={handleSubmit}>
         <h4>Add New Activity:</h4>
-        <label htmlFor="inputName" className="inputName">
-          Name:
-        </label>
+        <label htmlFor="inputName" className="inputName"></label>
         <input
           type="text"
           id="inputName"
@@ -40,7 +38,9 @@ export default function Form({ onAddActivity }) {
           onChange={(e) => setActivity(e.target.value)}
         ></input>
         <label htmlFor="inputGoodWeather" className="inputGoodWeather">
-          Good Weather Activity:
+          Is it <br />
+          🌤 good weather 🌤 <br />
+          activity?
         </label>
         <input
           className="checkbox "

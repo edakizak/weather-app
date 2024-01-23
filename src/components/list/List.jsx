@@ -7,13 +7,13 @@ export default function List({ activities, deleteActivity, isGoodWeather }) {
       {activities.map((activity) => {
         return (
           <li className="list_item" key={activity.id}>
-            {activity.name} {activity.isGoodWeather ? "🌤" : "⚡️"} weather
-            activity
+            {activity.isGoodWeather ? "🌤" : "⚡️"} weather activity:{" "}
+            {activity.name}
             <button
               className="delete-button"
               onClick={() => deleteActivity(activity.id)}
             >
-              x
+              <span className="emoji">🗑</span>
             </button>
           </li>
         );
