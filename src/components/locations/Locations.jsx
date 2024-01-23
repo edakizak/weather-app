@@ -1,31 +1,29 @@
-/* eslint-disable no-unused-vars */
-/* eslint-disable react/prop-types */
+// eslint-disable-next-line no-unused-vars
+import React from "react";
 import "./Locations.css";
-import { useState } from "react";
-export default function Locations() {
+
+// eslint-disable-next-line react/prop-types
+export default function Locations({ selectedLocation, setSelectedLocation }) {
   const locationOptions = [
     { value: "europe", label: "Europe" },
     { value: "arctic", label: "Arctic" },
     { value: "sahara", label: "Sahara" },
     { value: "rainforest", label: "Rainforest" },
   ];
-  const [selectedLocation, setSelectedLocation] = useState("");
 
-  const handleLocationChange = async (event) => {
+  const handleLocationChange = (event) => {
     const selectedLocation = event.target.value;
     setSelectedLocation(selectedLocation);
-
-    return (
-      <>
-        <select value={selectedLocation} onChange={handleLocationChange}>
-          <option value="">Select a location</option>
-          {locationOptions.map((option) => (
-            <option key={option.value} value={option.value}>
-              {option.label}
-            </option>
-          ))}
-        </select>
-      </>
-    );
   };
+
+  return (
+    <select value={selectedLocation} onChange={handleLocationChange}>
+      <option value="">Select a location</option>
+      {locationOptions.map((option) => (
+        <option key={option.value} value={option.value}>
+          {option.label}
+        </option>
+      ))}
+    </select>
+  );
 }
