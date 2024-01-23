@@ -28,13 +28,6 @@ function App() {
     <>
       <Form onAddActivity={handleAddActivity} />
       <List activities={activities} deleteActivity={handleDeleteActivity} />
-      {/* <List
-        isGoodWeather={isGoodWeather}
-        activities={
-          isGoodWeather ? goodWeatherActivities : badWeatherActivities
-        }
-        onDeleteActivity={handleDeleteActivity}
-      /> */}
     </>
   );
 }
