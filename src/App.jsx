@@ -1,6 +1,6 @@
 // import React from "react";
 import "./App.css";
-import Form from "./components/Form/Form.jsx";
+import Form from "./components/form/Form.jsx";
 import { uid } from "uid";
 import useLocalStorageState from "use-local-storage-state";
 import List from "./components/list/List.jsx";
