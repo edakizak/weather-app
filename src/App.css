@@ -57,3 +57,40 @@
   background-image: url("./assets/Images/rainforest.jpeg");
   color: aliceblue;
 }
+/* 
+body,
+.europe {
+  background: linear-gradient(
+    180deg,
+    rgba(176, 166, 53, 1) 0%,
+    rgba(2, 0, 36, 1) 100%
+  );
+}
+
+body,
+.arctic {
+  background: rgb(40, 114, 209);
+  background: linear-gradient(
+    180deg,
+    rgba(40, 114, 209, 1) 0%,
+    rgba(20, 18, 56, 1) 100%
+  );
+}
+
+body,
+.sahara {
+  background: linear-gradient(
+    180deg,
+    rgba(209, 134, 40, 1) 0%,
+    rgba(2, 0, 36, 1) 100%
+  );
+}
+
+body,
+.rainforest {
+  background: linear-gradient(
+    180deg,
+    rgba(36, 71, 14, 1) 0%,
+    rgba(2, 0, 36, 1) 100%
+  );
+} */
