@@ -1,25 +1,23 @@
-// import React from "react";
+import React, { useState, useEffect } from "react";
 import "./App.css";
-import Form from "./components/form/Form.jsx";
 import { uid } from "uid";
 import useLocalStorageState from "use-local-storage-state";
+import Form from "./components/form/Form.jsx";
 import List from "./components/list/List.jsx";
-import { useEffect, useState } from "react";
 import Weather from "./components/weather/Weather.jsx";
 import Locations from "./components/locations/Locations.jsx";
 
 function App() {
-  const [activities, setActivities] = useLocalStorageState("activities", {
-    defaultValue: [],
-  });
+  const [activities, setActivities] = useLocalStorageState("activities", []);
   const [weather, setWeather] = useState("");
-  // const isGoodWeather = true; // In the App.js, add a variable const isGoodWeather = true.
-  const [isGoodWeather, setIsGoodWeather] = useState({});
+  const [isGoodWeather, setIsGoodWeather] = useState(true);
+  const [selectedLocation, setSelectedLocation] = useState("");
+
   const filteredActivities = activities.filter(
     (activity) => activity.isGoodWeather === isGoodWeather
-  ); //Filter the activities for those whose key isForGoodWeather is equal to the global isGoodWeather variable.
+  );
 
-  const weatherUrl = `https://example-apis.vercel.app/api/weather${selectedLocation}`;
+  const weatherUrl = `https://example-apis.vercel.app/api/weather/${selectedLocation}`;
 
   useEffect(() => {
     async function fetchWeatherData() {
@@ -45,27 +43,23 @@ function App() {
 
   function handleAddActivity(newActivity) {
     setActivities([{ id: uid(), ...newActivity }, ...activities]);
-    // create a state for activities,
-    // write a function handleAddActivity which accepts a new activity object as parameter and
-    // adds this object to the activities state
-    // please add a unique id to every new activity object; you can use uid to do so.
   }
 
   function handleDeleteActivity(activityId) {
-    if (activityId !== null) {
-      setActivities(
-        activities.filter((activity) => activity.id !== activityId)
-      );
-    }
+    setActivities(activities.filter((activity) => activity.id !== activityId));
   }
+
   return (
     <>
-      <Locations />
+      <Locations
+        selectedLocation={selectedLocation}
+        setSelectedLocation={setSelectedLocation}
+      />
       <Weather weather={weather} />
       <List
         activities={filteredActivities}
         deleteActivity={handleDeleteActivity}
-        isGoodWeather={weather}
+        isGoodWeather={isGoodWeather}
       />
       <Form onAddActivity={handleAddActivity} />
     </>
