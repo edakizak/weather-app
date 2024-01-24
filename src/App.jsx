@@ -15,8 +15,10 @@ function App() {
   const [weather, setWeather] = useState("");
   const [selectedLocation, setSelectedLocation] = useLocalStorageState(
     "selectedLocation",
-    { defaultValue: [] }
+    { defaultValue: "" }
   );
+
+  console.log(setSelectedLocation);
 
   const isGoodWeather = weather?.isGoodWeather;
 
