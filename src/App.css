@@ -41,24 +41,7 @@
   color: #888;
 }
 
-.location-selection.europe {
-  background-image: url("./assets/Images/europe.jpeg");
-}
-
-.location-selection.arctic {
-  background-image: url("./assets/Images/arctic.jpeg");
-}
-
-.location-selection.sahara {
-  background-image: url("./assets/Images/sahara.webp");
-}
-
-.location-selection.rainforest {
-  background-image: url("./assets/Images/rainforest.jpeg");
-  color: aliceblue;
-}
-/* 
-body,
+/* body,
 .europe {
   background: linear-gradient(
     180deg,
