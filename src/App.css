@@ -3,6 +3,8 @@
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
+  height: 100%;
+  width: 100%;
 }
 
 .logo {
@@ -40,20 +42,30 @@
 .read-the-docs {
   color: #888;
 }
+.location-selection {
+  height: 100%;
+  width: 100%;
+  background-size: cover;
+}
 
 .location-selection.europe {
-  background-image: url("./assets/Images/europe.jpeg");
+  background-image: url("./assets/Images/fall.jpeg");
+  background-size: cover;
 }
 
 .location-selection.arctic {
   background-image: url("./assets/Images/arctic.jpeg");
+  background-size: cover;
 }
 
 .location-selection.sahara {
   background-image: url("./assets/Images/sahara.webp");
+  background-size: cover;
+  background-position: center;
 }
 
 .location-selection.rainforest {
   background-image: url("./assets/Images/rainforest.jpeg");
   color: aliceblue;
+  background-size: cover;
 }
