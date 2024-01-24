@@ -10,6 +10,9 @@
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(16.4px);
   -webkit-backdrop-filter: blur(16.4px);
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
 }
 
 /* Style for form headings */
@@ -39,8 +42,10 @@
 /* Text input specific styling */
 .form input[type="text"] {
   display: flex;
-  align-items: center;
+  align-self: center;
   justify-content: center;
+  width: 220px;
+  align-self: center;
   gap: 10px;
   font-family: inherit;
   font-size: 11px;
@@ -68,10 +73,7 @@
 
 /* Submit Button Styling */
 .form button[type="submit"] {
-  display: block;
-  display: inline-block;
-  /* align-items: center;
-  justify-content: center;  */
+  align-self: center;
   gap: 10px;
   width: 100px;
   padding: 10px;
@@ -91,6 +93,7 @@
 
 Placeholder styling */ ::placeholder {
   color: #c7c7c7;
+  background-color: none;
 }
 .inputGoodWeather {
   font-family: inherit;
