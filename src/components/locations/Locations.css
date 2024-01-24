@@ -8,14 +8,23 @@
   font-weight: 500;
   text-transform: uppercase;
   letter-spacing: 0.4px;
-  color: #3b75c1;
+  color: #77a6e3;
   background-color: #e0e8ef;
   border-style: solid;
   border-width: 2px 2px 2px 2px;
-  border-color: rgba(255, 255, 255, 0.333);
+  border-color: rgba(206, 207, 207, 0.333);
   border-radius: 40px 40px 40px 40px;
   padding: 16px 24px 16px 28px;
   transform: translate(0px, 0px) rotate(0deg);
   transition: 0.2s;
   box-shadow: -1px -1px 2px 0px #ffffff, 1px 1px 2px 0px;
+}
+
+.select-option {
+  position: absolute;
+  background-color: DodgerBlue;
+  top: 100%;
+  left: 0;
+  right: 0;
+  z-index: 99;
 }

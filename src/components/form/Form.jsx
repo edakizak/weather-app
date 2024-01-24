@@ -35,7 +35,7 @@ export default function Form({ onAddActivity }) {
           id="inputName"
           maxLength={60}
           name="inputName"
-          placeholder="Enter your activity"
+          placeholder="Enter activity"
           value={activity}
           onChange={(e) => setActivity(e.target.value)}
         ></input>
