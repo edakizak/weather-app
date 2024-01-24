@@ -17,19 +17,25 @@ export default function Locations({ selectedLocation, setSelectedLocation }) {
   };
 
   return (
-    <select
+    <nav
       className="location-selection"
       value={selectedLocation}
-      onChange={handleLocationChange}
+      onClick={handleLocationChange}
     >
-      <option className="select-option" value="">
+      {/* <option className="select-option" value="">
         📍 Select a location 📍
-      </option>
+      </option> */}
       {locationOptions.map((option) => (
-        <option key={option.value} value={option.value}>
+        <button
+          id="location-button"
+          key={option.value}
+          value={option.value}
+          type="button"
+          onClick={() => onClick(option)}
+        >
           {option.label}
-        </option>
+        </button>
       ))}
-    </select>
+    </nav>
   );
 }

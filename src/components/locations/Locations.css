@@ -20,11 +20,10 @@
   box-shadow: -1px -1px 2px 0px #ffffff, 1px 1px 2px 0px;
 }
 
-.select-option {
-  position: absolute;
-  background-color: DodgerBlue;
-  top: 100%;
-  left: 0;
-  right: 0;
-  z-index: 99;
+#location-button {
+  background-color: inherit;
+  color: #7d7c7c;
 }
+/* .location-button:hover {
+  
+} */
