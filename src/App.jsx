@@ -36,7 +36,8 @@ function App() {
           const body = document.body;
           if (selectedLocation === "") {
             body.style.background =
-              "linear-gradient(180deg,rgba(0, 212, 255, 1) 0%, rgba(1, 99, 138, 1) 29%, rgba(2, 28, 64, 1) 57%, rgba(2, 0, 36, 1) 100%)";
+              "radial-gradient(circle, rgba(251,63,236,1) 0%, rgba(253,170,49,1) 68%, rgba(255,115,3,1) 100%)";
+            body.style.color = "#FAF6DB";
           } else if (selectedLocation === "europe") {
             body.style.background =
               " linear-gradient(180deg, rgba(179,143,255,1) 0%, rgba(99,73,247,1) 100%)";

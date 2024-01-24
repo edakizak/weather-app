@@ -5,10 +5,10 @@ import "./Locations.css";
 // eslint-disable-next-line react/prop-types
 export default function Locations({ selectedLocation, setSelectedLocation }) {
   const locationOptions = [
-    { value: "europe", label: "Europe" },
-    { value: "arctic", label: "Arctic" },
-    { value: "sahara", label: "Sahara" },
-    { value: "rainforest", label: "Rainforest" },
+    { value: "europe", label: "⛲️ Europe" },
+    { value: "arctic", label: "🗻 Arctic" },
+    { value: "sahara", label: "🏜 Sahara" },
+    { value: "rainforest", label: "🌳 Rainforest" },
   ];
 
   const handleLocationChange = (event) => {
@@ -22,7 +22,9 @@ export default function Locations({ selectedLocation, setSelectedLocation }) {
       value={selectedLocation}
       onChange={handleLocationChange}
     >
-      <option value="">📍 Select a location 📍</option>
+      <option className="select-option" value="">
+        📍 Select a location 📍
+      </option>
       {locationOptions.map((option) => (
         <option key={option.value} value={option.value}>
           {option.label}
