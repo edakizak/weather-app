@@ -19,7 +19,7 @@ export default function Form({ onAddActivity }) {
     const newActivity = { id: Date.now(), name: activity, isGoodWeather };
     onAddActivity(newActivity);
     setActivities([...activities, newActivity]);
-    // setActivity("");
+    setActivity("");
     setIsGoodWeather(false);
     // console.log(setIsGoodWeather);
   };
