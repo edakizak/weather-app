@@ -24,6 +24,10 @@
   background-color: inherit;
   color: #7d7c7c;
 }
-/* .location-button:hover {
-  
-} */
+#location-button:hover {
+  transform: scale(1.2, 1.2);
+}
+#location-button:focus {
+  transform: scale(1.2, 1.2);
+  color: #2a2a2a;
+}

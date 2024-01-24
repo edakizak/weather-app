@@ -42,7 +42,3 @@
 .list_item {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
-.list_item:hover {
-  color: red;
-  font-size: medium;
-}
